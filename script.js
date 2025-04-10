@@ -6,7 +6,7 @@ let historyIndex = -1;
 
 // Terminal settings
 const settings = {
-    theme: 'default',
+    theme: 'retro',
     fontSize: 14,
     lineNumbers: false,
     animations: true,
@@ -15,7 +15,7 @@ const settings = {
 
 // Theme definitions
 const themes = {
-    'default': '',
+    'retro': 'theme-retro',
     'matrix': 'theme-matrix',
     'hacker': 'theme-hacker',
     'retro': 'theme-retro',
