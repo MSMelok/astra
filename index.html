@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Data | Terminal Access</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <!-- Terminal Header with controls -->
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="terminal-close"></span>
+                <span class="terminal-minimize"></span>
+                <span class="terminal-expand"></span>
+            </div>
+            <div class="terminal-title">astra-project-data@msmelok:~</div>
+        </div>
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <select id="theme-select">
+                <option value="default">Default Theme (Green)</option>
+                <option value="matrix">Matrix Theme</option>
+                <option value="hacker">Hacker Theme</option>
+                <option value="retro">Retro Theme</option>
+                <option value="neon">Neon Theme</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+            
+            <div class="font-controls">
+                <button id="font-smaller" title="Decrease font size">A-</button>
+                <button id="font-reset" title="Reset font size">A</button>
+                <button id="font-larger" title="Increase font size">A+</button>
+            </div>
+            
+            <div class="toggle-controls">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="toggle-line-numbers">
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Line Numbers</span>
+                </label>
+                
+                <label class="toggle-switch">
+                    <input type="checkbox" id="toggle-animations" checked>
+                    <span class="toggle-slider"></span>
+                    <span class="toggle-label">Animations</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Terminal Body -->
+        <div class="terminal-body">
+            <!-- Terminal Output -->
+            <div class="terminal-output">
+                <p class="system-message">Welcome to Astra-Project Data Terminal v2.0.0</p>
+                <p class="system-message">Loading components...</p>
+                <p class="success-message">Info loaded successfully.</p>
+                <p class="system-message">Connected to JSON Data: team_members_data</p>
+                <p class="warning-message">DISCLAIMER: The list of contacts is limited and updated till the date of 31 August 2022. No info added after this date.</p>
+                <p class="system-message">Type 'help' for a list of commands or start searching for team members</p>
+                <p class="system-message">--------------------------------------------------</p>
+            </div>
+
+            <!-- Terminal Input Line -->
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">root@msmelok:~$</span>
+                <input type="text" id="search-input" placeholder="search --member 'name or any info'">
+                <span class="typing-indicator"></span>
+            </div>
+
+            <!-- Dropdown for auto-suggestions -->
+            <div class="dropdown" id="suggestions-dropdown">
+                <!-- Suggestions will appear here -->
+            </div>
+
+            <!-- Status Messages -->
+            <div class="status-message loading-message" id="loading-message">
+                [INFO] Searching database... Please wait...
+            </div>
+            <div class="status-message error-display" id="error-message">
+                [ERROR] <span id="error-text">Failed to load data. Check your connection.</span>
+            </div>
+            <div class="status-message no-results" id="no-results">
+                [WARNING] No matching records found. Try a different search term.
+            </div>
+            <div class="status-message placeholder-message" id="placeholder-message">
+                [SYSTEM] Enter search query to find team members.
+            </div>
+
+            <!-- Contact Details Display -->
+            <div class="contact-details" id="contact-details">
+                <!-- Details will be displayed here -->
+            </div>
+            
+            <!-- Terminal Footer -->
+            <div class="terminal-footer">
+                <span id="timestamp">00:00:00</span> | 
+                <span id="memory-usage">MEM: 128MB</span> | 
+                <span id="terminal-status">READY</span> |
+                © 2022 - Terminal Data Access v2.0 | Data last updated: 31 August, 2022
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
