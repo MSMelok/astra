@@ -264,7 +264,7 @@ function processCommand(command) {
 // Load team data from JSON file
 async function loadTeamData() {
     try {
-        const response = await fetch('english_Team_Data.json');
+        const response = await fetch('./assets/data/mainData/rayaData/augustUpdate/english_Team_Data.json');
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
